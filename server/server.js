@@ -12,7 +12,14 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://todo-app-frontend-gv7u.onrender.com"
+    ]
+  })
+);
 
 
 app.use("/api", userRoute);
