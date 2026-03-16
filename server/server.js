@@ -10,12 +10,7 @@ connectDB();
 
 const app = express();
 
-
-app.use(cors({
-  origin: "https://todo-app-frontend-gv7u.onrender.com",
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
@@ -29,5 +24,5 @@ app.get("/", (req, res) => {
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log(`Server Running At Port http://localhost:${port}`);
+  console.log(`Server Running At Port ${port}`);
 });
