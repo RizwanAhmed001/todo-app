@@ -5,7 +5,7 @@ export const TodoContext = createContext({});
 
 const MyTodoContext = ({children}) => {
 
-  const backendUrl = "https://todo-app-backend-1dd3.onrender.com/api";
+  const backendUrl = "http://localhost:4000/api";
 
   const navigate = useNavigate();
 

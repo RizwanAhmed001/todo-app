@@ -10,14 +10,9 @@ connectDB();
 
 const app = express();
 
-const corsOptions = {
-  origin: "https://todo-app-frontendd.onrender.com",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // allow preflight requests
+app.use(cors({
+  origin: "http://localhost:5173",
+}));
 
 app.use(express.json());
 
