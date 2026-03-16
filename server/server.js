@@ -10,17 +10,16 @@ connectDB();
 
 const app = express();
 
+
+app.use(cors({
+  origin: "https://todo-app-frontend-gv7u.onrender.com",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true
+}));
+
+app.options("*", cors());
+
 app.use(express.json());
-
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://todo-app-frontend-gv7u.onrender.com"
-    ]
-  })
-);
-
 
 app.use("/api", userRoute);
 app.use("/api", todoRoute);
