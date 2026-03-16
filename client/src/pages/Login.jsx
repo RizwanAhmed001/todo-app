@@ -29,7 +29,7 @@ const Login = () => {
 
       const response = await axios.post(
         backendUrl + `${login ? "/login" : "/register"}`,
-        formData
+        formData, { withCredentials: true }
       );
 
       if (response.data.success) {
